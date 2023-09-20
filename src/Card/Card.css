@@ -60,3 +60,15 @@
 .close-button:hover {
     cursor: pointer;
 }
+
+.bold {
+  font-weight: 700;
+}
+
+h3 {
+  text-decoration: underline;
+}
+
+.project-sub {
+  margin: 5px;
+}

@@ -5,28 +5,23 @@ const projects = [
   {
     id: 1,
     name: "Portfolio Site",
-    description: "",
+    description: "My portfolio site. Built with React JS, HTML5, and CSS.",
     link: "",
   },
 
   {
     id: 2,
     name: "Jammming App",
-    description: "",
+    description:
+      "Career path project from Codecademy. Built from scratch without using their provided starter code. This project utilizes Spotify authentication and API so there are some limitations. You will not be able to test it without being manually added to my Spotify Developer Dashboard. If the need arises, please contact me to be added.",
     link: "",
   },
 
   {
     id: 3,
     name: "Flash Cards App",
-    description: "",
-    link: "",
-  },
-
-  {
-    id: 4,
-    name: "Starfew Valley Tracker",
-    description: "",
+    description:
+      "Career path project from Codecademy. Built from scratch without provided starter code, using React JS, Redux, HTML, and CSS.",
     link: "",
   },
 ];
@@ -60,35 +55,38 @@ export const Card = ({ contentName, activeCard, openCard }) => {
         <div className="card">
           <h1 className="card-header">My Projects</h1>
           <div className="card-body">
-            <ul>
+            <div>
               {projects.map((project) => {
                 return (
-                  <li>
-                    <h3>{project.name}</h3>
-                    <ul>
-                      <li>
-                        <p>{project.description}</p>
-                      </li>
-                      <li>{project.link}</li>
-                    </ul>
-                  </li>
+                  <ul className="project-container">
+                    <li>
+                      <h3>{project.name}</h3>
+                      <div className="project-sub">
+                        <div className="bold">Description:</div>
+                        <span>{project.description}</span>
+                      </div>
+                      <div className="project-sub">
+                        <div className="bold">Link:</div>
+                        <span>{project.link}</span>
+                      </div>
+                    </li>
+                  </ul>
                 );
               })}
-            </ul>
+            </div>
+          </div>
+        </div>
+      );
+    } else if (contentName === "Contact Me") {
+      return (
+        <div className="card">
+          <h1 className="card-header">Contact</h1>
+          <div className="card-body">
+            <span className="bold">Email:</span> helenpt37@gmail.com
           </div>
         </div>
       );
     }
-    // } else if (contentName === "My Resume") {
-    //   return (
-    //     <div className="card">
-    //       <h1 className="card-header">My Resume</h1>
-    //       <div className="card-body">
-
-    //       </div>
-    //     </div>
-    //   );
-    // }
   };
   return (
     <div

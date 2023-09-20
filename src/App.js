@@ -7,6 +7,7 @@ import cssLogo from "./Logo/cssLogo.png";
 import htmlLogo from "./Logo/htmlLogo.png";
 import reactLogo from "./Logo/reactLogo.png";
 import jsLogo from "./Logo/jsLogo.png";
+import reduxLogo from "./Logo/reduxLogo.png";
 import Resume2023 from "./assets/Resume2023.pdf";
 
 const cardData = [
@@ -23,6 +24,11 @@ const cardData = [
     id: 3,
     name: "My Resume",
   },
+
+  {
+    id: 4,
+    name: "Contact Me",
+  },
 ];
 
 const logoData = [
@@ -30,6 +36,7 @@ const logoData = [
   { id: 2, name: "React Logo", src: reactLogo },
   { id: 3, name: "HTML Logo", src: htmlLogo },
   { id: 4, name: "CSS Logo", src: cssLogo },
+  { id: 5, name: "Redux Logo", src: reduxLogo },
 ];
 function App() {
   const [activeCard, setActiveCard] = useState(undefined);
