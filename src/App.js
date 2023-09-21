@@ -49,13 +49,13 @@ function App() {
   };
 
   const handleContainerClick = (event) => {
-    event.preventDefault();
-    if (event.target.className === "card") {
+    if (event.target.className !== "cards-container") {
       return;
     } else {
       setActiveCard(undefined);
     }
   };
+
   return (
     <div className="App">
       <div className="header-container">

@@ -2,11 +2,12 @@
     position: relative;
     background-color: #F9F4C9;
     width: 500px;
-    z-index: 100;
+    z-index: 500;
     border-radius: 10px;
     padding: 20px;
     max-height: 700px;
     overflow: scroll;
+
 }
 
 .card-container::-webkit-scrollbar {
@@ -49,12 +50,15 @@
 }
 
 .close-button {
+    display: flex;
+    justify-content: center;
     position: relative;
+    left: 456px;
     padding: 0px;
     font-size: 1.2rem;
     text-align: right;
-    margin-right: 20px
-
+    width: 20px;
+    height: 20px;
 }
 
 .close-button:hover {
@@ -71,4 +75,9 @@ h3 {
 
 .project-sub {
   margin: 5px;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: space-evenly
 }
