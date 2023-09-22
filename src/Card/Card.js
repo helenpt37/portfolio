@@ -95,11 +95,19 @@ export const Card = ({ contentName, activeCard, openCard }) => {
                       </div>
                       <div className="project-sub">
                         <div className="bold">GitHub Link:</div>
-                        <a href={project.gitHubLink} target="_blank">
+                        <a
+                          href={project.gitHubLink}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           {project.gitHubLink}
                         </a>
                         <div className="bold">Deployment Link:</div>
-                        <a href={project.netlifyLink} target="_blank">
+                        <a
+                          href={project.netlifyLink}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           {project.netlifyLink}
                         </a>
                       </div>
@@ -124,7 +132,7 @@ export const Card = ({ contentName, activeCard, openCard }) => {
                     title={icon.name}
                     key={icon.id}
                   >
-                    <img src={icon.url} />
+                    <img src={icon.url} alt={`${icon.name} icon`} />
                   </a>
                 );
               } else {
@@ -132,10 +140,11 @@ export const Card = ({ contentName, activeCard, openCard }) => {
                   <a
                     href={icon.pageUrl}
                     target="_blank"
+                    rel="noreferrer"
                     title={icon.name}
                     key={icon.id}
                   >
-                    <img src={icon.url} />
+                    <img src={icon.url} alt={`${icon.name} icon`} />
                   </a>
                 );
               }
