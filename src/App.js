@@ -8,7 +8,7 @@ import htmlLogo from "./Logo/htmlLogo.png";
 import reactLogo from "./Logo/reactLogo.png";
 import jsLogo from "./Logo/jsLogo.png";
 import reduxLogo from "./Logo/reduxLogo.png";
-import Resume2023 from "./assets/new-resume2023.pdf";
+import Resume2023 from "./assets/resume-gen.pdf";
 
 const cardData = [
   {
