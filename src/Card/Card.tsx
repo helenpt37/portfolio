@@ -4,11 +4,14 @@ import emailIcon from "../assets/emailIcon.png";
 import githubIcon from "../assets/githubIcon.png";
 import linkedinIcon from "../assets/linkedinIcon.png";
 
-const projects = [
+type Projects = {id: number, name: string, description: string, gitHubLink: string, netlifyLink: string}[];
+type Icons = {id: number, name: string, url?: string, pageUrl?: string}[];
+
+const projects: Projects = [
   {
     id: 1,
     name: "Portfolio Site",
-    description: "My portfolio site. Built with React JS, HTML5, and CSS.",
+    description: "My portfolio site. Built with React JS, HTML5, TypeScript, and CSS.",
     gitHubLink: "https://github.com/helenpt37/portfolio.git",
     netlifyLink: "https://helen-tran.space",
   },
@@ -32,7 +35,7 @@ const projects = [
   },
 ];
 
-const contactIcons = [
+const contactIcons: Icons = [
   {
     id: 1,
     name: "Email",
@@ -55,7 +58,7 @@ const contactIcons = [
 ];
 
 export const Card = ({ contentName, activeCard, openCard }) => {
-  const getContent = (contentName) => {
+  const getContent = (contentName: string) => {
     if (contentName === "About Me") {
       return (
         <div className="card">

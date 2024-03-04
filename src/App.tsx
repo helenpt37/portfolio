@@ -1,16 +1,19 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import { Logo } from "./Logo/Logo.js";
-import { Button } from "./Button/Button.js";
-import { Card } from "./Card/Card.js";
+import { Logo } from "./Logo/Logo.tsx";
+import { Button } from "./Button/Button.tsx";
+import { Card } from "./Card/Card.tsx";
 import cssLogo from "./Logo/cssLogo.png";
 import htmlLogo from "./Logo/htmlLogo.png";
 import reactLogo from "./Logo/reactLogo.png";
 import jsLogo from "./Logo/jsLogo.png";
 import reduxLogo from "./Logo/reduxLogo.png";
+import typescriptLogo from "./Logo/typescriptLogo.png"
 import Resume2023 from "./assets/resume-gen.pdf";
 
-const cardData = [
+type card = string | undefined;
+
+const cardData: {id: number, name: string}[] = [
   {
     id: 1,
     name: "About Me",
@@ -31,25 +34,27 @@ const cardData = [
   },
 ];
 
-const logoData = [
+const logoData: {id: number, name: string, src: string}[] = [
   { id: 1, name: "JS Logo", src: jsLogo },
   { id: 2, name: "React Logo", src: reactLogo },
   { id: 3, name: "HTML Logo", src: htmlLogo },
   { id: 4, name: "CSS Logo", src: cssLogo },
   { id: 5, name: "Redux Logo", src: reduxLogo },
+  { id: 6, name: "TypeScript Logo", src: typescriptLogo }
 ];
 function App() {
-  const [activeCard, setActiveCard] = useState(undefined);
+  const [activeCard, setActiveCard] = useState<card>(undefined);
 
-  const openCard = (card) => {
+  const openCard = (card : card) => {
     if (card === "My Resume") {
       window.open(Resume2023, "_blank");
     }
     setActiveCard(card);
   };
 
-  const handleContainerClick = (event) => {
-    if (event.target.className !== "cards-container") {
+  const handleContainerClick = (event : React.MouseEvent<HTMLDivElement>) => {
+    const target = event.target as HTMLDivElement;
+    if (target.className  !== "cards-container") {
       return;
     } else {
       setActiveCard(undefined);
